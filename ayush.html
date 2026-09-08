@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AYUSH SECURITY & FACILITY MANAGEMENT SERVICES | Official Corporate Portal</title>
+  
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.com/npm/swiper@11/swiper-bundle.min.css" />
+  
+  <style>
+    :root {
+      --bg-dark: #0b1329;
+      --bg-card: #111e3f;
+      --bg-card-hover: #192a56;
+      --primary-text: #ffffff;
+      --muted-text: #d1d5db;
+      --accent-yellow: #ffb703;
+      --accent-orange: #fb8500;
+      --accent-red: #a80000;
+      --accent-darkred: #780000;
+      --border-color: rgba(255, 255, 255, 0.12);
+      --border-hover: rgba(255, 183, 3, 0.5);
+      --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      color: var(--primary-text);
+      line-height: 1.6;
+      background-color: var(--bg-dark);
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Top Notice Header Bar */
+    .top-header-bar {
+      background: linear-gradient(90deg, #f7b731 0%, #ffb703 100%);
+      color: #000000;
+      padding: 0.5rem 0;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .top-header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .top-header-left {
+      letter-spacing: 0.5px;
+    }
+
+    .top-header-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .top-header-right a {
+      color: #000000;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .top-header-right a:hover {
+      opacity: 0.7;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .social-links a {
+      width: 24px;
+      height: 24px;
+      background: #000000;
+      color: #ffb703;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+    }
+
+    /* Main Navigation Header */
+    header {
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      padding: 0.5rem 0;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo-link {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      max-width: 80%;
+    }
+
+    .brand-logo-svg {
+      height: auto;
+      max-height: 60px;
+      width: 100%;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+    }
+
+    nav a {
+      color: #1a1a1a;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.92rem;
+      transition: var(--transition);
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: var(--accent-orange);
+    }
+
+    .nav-btn {
+      background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-red) 100%);
+      color: #ffffff !important;
+      padding: 0.65rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 700 !important;
+      box-shadow: 0 4px 15px rgba(251, 133, 0, 0.4);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: #1a1a1a;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Dynamic Curved Hero Canvas */
+    .hero-enterprise {
+      position: relative;
+      min-height: 85vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background-color: #ffb703;
+    }
+
+    .hero-custom-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-container {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-main-content {
+      max-width: 750px;
+      z-index: 10;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(120, 0, 0, 0.15);
+      color: var(--accent-darkred);
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(120, 0, 0, 0.2);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero-main-content h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.15;
+      color: var(--accent-red);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+    }
+
+    .hero-main-content h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-main-content p {
+      font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+      color: #1a1a1a;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      max-width: 620px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+    }
+
+    .btn-primary {
+      background: var(--accent-red);
+      color: #ffffff;
+      box-shadow: 0 8px 25px rgba(168, 0, 0, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-darkred);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(120, 0, 0, 0.6);
+    }
+
+    .btn-outline {
+      background-color: #0b1329;
+      color: #ffffff;
+      border: 2px solid #0b1329;
+    }
+
+    .btn-outline:hover {
+      background-color: #111e3f;
+      border-color: #111e3f;
+    }
+
+    /* Media Frame & Right Guard Container */
+    .hero-media-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+    }
+
+    .circle-inset-photo {
+      position: absolute;
+      left: -10px;
+      bottom: 20px;
+      width: clamp(140px, 20vw, 240px);
+      height: clamp(140px, 20vw, 240px);
+      border-radius: 50%;
+      border: 6px solid #ffffff;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      overflow: hidden;
+      z-index: 12;
+    }
+
+    .circle-inset-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .guard-full-img {
+      position: relative;
+      z-index: 11;
+      max-height: 520px;
+      width: 100%;
+      max-width: 450px;
+      object-fit: contain;
+      filter: drop-shadow(0 15px 20px rgba(0,0,0,0.4));
+    }
+
+    /* Stats Grid Banner */
+    .stats-banner {
+      background: rgba(11, 19, 41, 0.95);
+      backdrop-filter: blur(16px);
+      margin-top: 2rem;
+      border-radius: 16px;
+      padding: 1.75rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1.25rem;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    .stat-item {
+      text-align: center;
+      border-right: 1px solid var(--border-color);
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-number {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: var(--accent-yellow);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-label {
+      color: var(--muted-text);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Sections */
+    section {
+      padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .section-subtitle {
+      color: var(--accent-yellow);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+    }
+
+    /* About Section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .about-card {
+      background: var(--bg-card);
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+
+    .about-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow);
+    }
+
+    .about-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 183, 3, 0.15);
+      color: var(--accent-yellow);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(255, 183, 3, 0.3);
+    }
+
+    .about-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.85rem;
+      color: #ffffff;
+    }
+
+    .about-card ul {
+      list-style: none;
+    }
+
+    .about-card ul li {
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--muted-text);
+      font-size: 0.9rem;
+    }
+
+    .about-card ul li i {
+      color: var(--accent-yellow);
+      margin-top: 4px;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-hover);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .service-img-wrapper {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .service-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .service-card:hover .service-img-wrapper img {
+      transform: scale(1.08);
+    }
+
+    .service-body {
+      padding: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .service-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-icon {
+      width: 42px;
+      height: 42px;
+      background: rgba(255, 183, 3, 0.15);
+      color: var(--accent-yellow);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
+
+    .service-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .service-card ul {
+      list-style: none;
+    }
+
+    .service-card ul li {
+      margin-bottom: 0.65rem;
+      color: var(--muted-text);
+      font-size: 0.88rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .service-card ul li i {
+      color: var(--accent-yellow);
+      margin-top: 3px;
+    }
+
+    /* Carousel Section */
+    .carousel-section {
+      background: #070d1e;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+
+    .mySwiper {
+      width: 100%;
+      padding-bottom: 3.5rem !important;
+    }
+
+    .mySwiper .swiper-slide {
+      background: var(--bg-card);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+
+    .mySwiper .swiper-slide img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .slide-content {
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .slide-content h4 {
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .slide-content p {
+      color: var(--muted-text);
+      font-size: 0.88rem;
+    }
+
+    .swiper-pagination-bullet {
+      background: #ffffff !important;
+      opacity: 0.4;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: var(--accent-yellow) !important;
+      opacity: 1;
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    /* Client Table */
+    .table-card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      min-width: 650px;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: #ffffff;
+      font-weight: 700;
+      padding: 1.1rem 1.4rem;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    td {
+      padding: 1rem 1.4rem;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.9rem;
+      color: var(--muted-text);
+    }
+
+    tr:hover {
+      background-color: rgba(255, 255, 255, 0.02);
+    }
+
+    td strong {
+      color: #ffffff;
+    }
+
+    .badge {
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: inline-block;
+      text-transform: uppercase;
+    }
+
+    .badge-blue { background: rgba(255, 183, 3, 0.2); color: #ffb703; border: 1px solid rgba(255, 183, 3, 0.4); }
+    .badge-green { background: rgba(251, 133, 0, 0.2); color: #fb8500; border: 1px solid rgba(251, 133, 0, 0.4); }
+    .badge-purple { background: rgba(168, 85, 247, 0.2); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.4); }
+    .badge-red { background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.4); }
+
+    /* Contact Block */
+    .contact-wrapper {
+      background: linear-gradient(135deg, #192a56 0%, #0b1329 100%);
+      border-radius: 20px;
+      padding: clamp(1.5rem, 4vw, 3.5rem);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .contact-info h3 {
+      font-size: 1.35rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item i {
+      font-size: 1.15rem;
+      color: var(--accent-yellow);
+      background: rgba(255, 183, 3, 0.15);
+      padding: 12px;
+      border-radius: 12px;
+      flex-shrink: 0;
+      border: 1px solid rgba(255, 183, 3, 0.3);
+    }
+
+    .contact-item p {
+      color: var(--muted-text);
+      font-size: 0.9rem;
+    }
+
+    .contact-item strong {
+      color: #ffffff;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #040814;
+      color: var(--muted-text);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.88rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* Floating Quick Action Buttons */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 24px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+      z-index: 999;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    .call-float {
+      position: fixed;
+      bottom: 85px;
+      right: 25px;
+      background-color: #2563eb;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 20px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+      z-index: 999;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .call-float:hover {
+      transform: scale(1.1);
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 992px) {
+      .hero-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-main-content {
+        margin: 0 auto;
+      }
+      .hero-actions {
+        justify-content: center;
+      }
+      .hero-media-wrapper {
+        min-height: 350px;
+      }
+      .circle-inset-photo {
+        left: 50%;
+        transform: translateX(-120%);
+      }
+      .top-header-container {
+        flex-direction: column;
+        gap: 0.4rem;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-toggle {
+        display: block;
+      }
+      nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        border-bottom: 1px solid var(--border-color);
+        flex-direction: column;
+        padding: 1.5rem 0;
+        gap: 1.25rem;
+        display: none;
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+      }
+      nav.active {
+        display: flex;
+      }
+      .stats-banner {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      .stat-item {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 1rem;
+      }
+      .stat-item:nth-child(3), .stat-item:nth-child(4) {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .btn {
+        width: 100%;
+      }
+      .circle-inset-photo {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats-banner {
+        grid-template-columns: 1fr;
+      }
+      .stat-item {
+        border-bottom: 1px solid var(--border-color);
+      }
+      .stat-item:last-child {
+        border-bottom: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Notice Header Bar -->
+  <div class="top-header-bar">
+    <div class="container top-header-container">
+      <div class="top-header-left">
+        Welcome to AYUSH SECURITY &amp; FACILITY MANAGEMENT SERVICES
+      </div>
+      <div class="top-header-right">
+        <a href="tel:+918867485808"><i class="fa-solid fa-phone"></i> +91 8867485808</a>
+        <div class="social-links">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="brand-logo-link">
+        <svg class="brand-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 120">
+          <defs>
+            <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#990000" />
+              <stop offset="100%" stop-color="#660000" />
+            </linearGradient>
+          </defs>
+          <g transform="translate(10, 5)">
+            <path d="M50 5 L90 20 V50 C90 75 50 95 50 95 C50 95 10 75 10 50 V20 Z" fill="url(#shieldGrad)" />
+            <path d="M32 48 L44 60 L68 34" fill="none" stroke="#ffb703" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+          <text x="115" y="52" font-family="'Poppins', sans-serif" font-weight="900" font-size="34" fill="#990000" letter-spacing="-0.5">AYUSH</text>
+          <text x="245" y="52" font-family="'Poppins', sans-serif" font-weight="700" font-size="28" fill="#ffb703">SERVICES</text>
+          <text x="115" y="80" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="12" fill="#1a1a1a" letter-spacing="1.2">SECURITY &amp; FACILITY MANAGEMENT SERVICES</text>
+          <line x1="115" y1="92" x2="680" y2="92" stroke="#ffb703" stroke-width="4" stroke-linecap="round" />
+        </svg>
+      </a>
+      
+      <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav id="navMenu">
+        <a href="#about">About Us</a>
+        <a href="#services">Our Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#clients">Portfolio</a>
+        <a href="#contact" class="nav-btn">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Dynamic Curved Hero Canvas -->
+  <div class="hero-enterprise">
+    <svg class="hero-custom-bg" viewBox="0 0 1440 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="0,0 300,0 260,70 0,70" fill="#ffffff" />
+      <path d="M -50 650 A 250 250 0 0 1 380 400 L -50 400 Z" fill="#780000" />
+      <path d="M 850 60 C 830 180 920 220 920 300 C 920 380 830 420 850 540 L 980 600 L 980 0 Z" fill="#a80000" />
+      <path d="M 910 0 C 900 150 990 220 990 300 C 990 380 900 450 910 600 L 1440 600 L 1440 0 Z" fill="#191216" />
+    </svg>
+
+    <div class="container hero-container">
+      <div class="hero-layout">
+        
+        <div class="hero-main-content" data-aos="fade-right">
+          <div class="hero-badge">
+            <i class="fa-solid fa-shield-halved"></i> ISO Certified Security &amp; Facility Provider
+          </div>
+          <h1>AYUSH SECURITY &amp; FACILITY MANAGEMENT SERVICES</h1>
+          <h2>" Be secure with our safety "</h2>
+          <p>Your trusted corporate partner in high-grade physical guarding, technical facility maintenance, and complete asset protection for commercial, industrial, and residential sectors.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Get Quote Now</a>
+            <a href="#services" class="btn btn-outline">Our Services</a>
+          </div>
+        </div>
+
+        <div class="hero-media-wrapper" data-aos="fade-left">
+          <div class="circle-inset-photo">
+            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=600&q=80" alt="Security Guard Briefing">
+          </div>
+          <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80" alt="Professional Security Officer" class="guard-full-img">
+        </div>
+
+      </div>
+
+      <div class="stats-banner" data-aos="zoom-in" data-aos-delay="250">
+        <div class="stat-item">
+          <span class="stat-number">25+</span>
+          <span class="stat-label">Active Clients</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Safety Compliance</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">10+</span>
+          <span class="stat-label">Years Industry Exp</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">Operations Support</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">Who We Are</span>
+        <h2 class="section-title">Built on Trust, Safety, and Operational Excellence</h2>
+      </div>
+      
+      <div class="about-grid">
+        <div class="about-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="about-icon"><i class="fa-solid fa-eye"></i></div>
+          <h3>Our Vision</h3>
+          <p style="color: var(--muted-text); font-size: 0.92rem;">To be a leading security and facility management provider known for professionalism, reliability, and excellence in service.</p>
+        </div>
+
+        <div class="about-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="about-icon"><i class="fa-solid fa-bullseye"></i></div>
+          <h3>Our Mission</h3>
+          <ul>
+            <li><i class="fa-solid fa-circle-check"></i> Deliver high-quality security solutions.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Ensure safety of people and assets.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Provide efficient facility management.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Foster long-term client trust.</li>
+          </ul>
+        </div>
+
+        <div class="about-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="about-icon"><i class="fa-solid fa-list-check"></i></div>
+          <h3>Scope of Work</h3>
+          <ul>
+            <li><i class="fa-solid fa-circle-check"></i> Apartment & Property Care</li>
+            <li><i class="fa-solid fa-circle-check"></i> Space & Physical Assets Care</li>
+            <li><i class="fa-solid fa-circle-check"></i> Help Desk & Business Management</li>
+            <li><i class="fa-solid fa-circle-check"></i> Hospitality & Commercial Sectors</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" style="background-color: #070d1e;">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">What We Offer</span>
+        <h2 class="section-title">Comprehensive Security &amp; Facility Solutions</h2>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80" alt="Housekeeping Services">
+          </div>
+          <div class="service-body">
+            <div class="service-header">
+              <div class="service-icon"><i class="fa-solid fa-broom"></i></div>
+              <h3 class="service-title">Housekeeping Services</h3>
+            </div>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Sweeping, mopping & dusting</li>
+              <li><i class="fa-solid fa-check"></i> Restroom deep cleaning</li>
+              <li><i class="fa-solid fa-check"></i> Carpet & upholstery care</li>
+              <li><i class="fa-solid fa-check"></i> Eco-friendly non-toxic products</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="STP Plant Operations">
+          </div>
+          <div class="service-body">
+            <div class="service-header">
+              <div class="service-icon"><i class="fa-solid fa-water"></i></div>
+              <h3 class="service-title">STP Plant Operations</h3>
+            </div>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Shift operators per capacity</li>
+              <li><i class="fa-solid fa-check"></i> Weekly engineer visits</li>
+              <li><i class="fa-solid fa-check"></i> Monthly chemist water tests</li>
+              <li><i class="fa-solid fa-check"></i> Technical troubleshooting</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80" alt="Electrical Maintenance">
+          </div>
+          <div class="service-body">
+            <div class="service-header">
+              <div class="service-icon"><i class="fa-solid fa-bolt"></i></div>
+              <h3 class="service-title">Electrical Maintenance</h3>
+            </div>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Preventive electrical checks</li>
+              <li><i class="fa-solid fa-check"></i> Circuit breaker upgrades</li>
+              <li><i class="fa-solid fa-check"></i> Rewiring & light fittings</li>
+              <li><i class="fa-solid fa-check"></i> Daily common meter readings</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=800&q=80" alt="Plumbing Services">
+          </div>
+          <div class="service-body">
+            <div class="service-header">
+              <div class="service-icon"><i class="fa-solid fa-faucet"></i></div>
+              <h3 class="service-title">Plumbing Services</h3>
+            </div>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Daily tank & sump leak checks</li>
+              <li><i class="fa-solid fa-check"></i> Overhead tank cleaning (3 mos)</li>
+              <li><i class="fa-solid fa-check"></i> Sump cleaning (6 mos)</li>
+              <li><i class="fa-solid fa-check"></i> Rainwater drain management</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=800&q=80" alt="Gardening & Landscaping">
+          </div>
+          <div class="service-body">
+            <div class="service-header">
+              <div class="service-icon"><i class="fa-solid fa-seedling"></i></div>
+              <h3 class="service-title">Gardening & Landscaping</h3>
+            </div>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Lawn trimming & pruning</li>
+              <li><i class="fa-solid fa-check"></i> Balcony & terrace garden care</li>
+              <li><i class="fa-solid fa-check"></i> Organic fertilizer application</li>
+              <li><i class="fa-solid fa-check"></i> Irrigation system checks</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80" alt="Pool & Pest Control">
+          </div>
+          <div class="service-body">
+            <div class="service-header">
+              <div class="service-icon"><i class="fa-solid fa-bug"></i></div>
+              <h3 class="service-title">Pool & Pest Control</h3>
+            </div>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Pool filtration & TCCS-90 dosing</li>
+              <li><i class="fa-solid fa-check"></i> Weekly pH & chlorine testing</li>
+              <li><i class="fa-solid fa-check"></i> Integrated pest care (Green Pest)</li>
+              <li><i class="fa-solid fa-check"></i> Termite & mosquito sprays</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Operations Carousel Section -->
+  <div class="carousel-section" id="gallery">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">Operational Excellence</span>
+        <h2 class="section-title">Our Trained Personnel in Action</h2>
+      </div>
+
+      <div class="swiper mySwiper" data-aos="zoom-in">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80" alt="Security Guard Briefing">
+            <div class="slide-content">
+              <h4>Security Personnel Deployments</h4>
+              <p>24/7 guarded security shift briefings and strict gate surveillance.</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?auto=format&fit=crop&w=800&q=80" alt="Facility Management">
+            <div class="slide-content">
+              <h4>Facility & Commercial Sanitation</h4>
+              <p>Industrial-grade cleaning protocols using eco-friendly non-toxic agents.</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Electrical Operations">
+            <div class="slide-content">
+              <h4>Technical Maintenance & Engineering</h4>
+              <p>Routine electrical panel inspections and preventative asset upkeep.</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80" alt="Corporate Horticulture Care">
+            <div class="slide-content">
+              <h4>Corporate Horticulture Care</h4>
+              <p>Dedicated garden maintenance and organic lawn management for estates.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Complete Client Portfolio Section -->
+  <section id="clients">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">Trusted Partnerships</span>
+        <h2 class="section-title">Our Valued Client Portfolio</h2>
+      </div>
+
+      <div class="table-card" data-aos="fade-up">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>SL NO</th>
+                <th>Client Name</th>
+                <th>Type of Client</th>
+                <th>Type of Service</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>01</td><td><strong>SJR Fiesta Homes</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Full Maintenance</td><td>Electronic city</td></tr>
+              <tr><td>02</td><td><strong>SSB Urban Lotus</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>Rayasandra</td></tr>
+              <tr><td>03</td><td><strong>Shrihari Residency</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>Bellandur</td></tr>
+              <tr><td>04</td><td><strong>Orchard in Bloom Inner spaces</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Full Maintenance</td><td>Harllur Road</td></tr>
+              <tr><td>05</td><td><strong>Sunshine</strong></td><td><span class="badge badge-green">Villas</span></td><td>Full Maintenance</td><td>Carmelaram gate</td></tr>
+              <tr><td>06</td><td><strong>Adarsh Nivas</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>JP Nagar</td></tr>
+              <tr><td>07</td><td><strong>Adarsh Tropica</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>Doddakannahalli</td></tr>
+              <tr><td>08</td><td><strong>Pooja Navaratna</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>Doddakannahalli</td></tr>
+              <tr><td>09</td><td><strong>Arrat</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>Electronic city</td></tr>
+              <tr><td>10</td><td><strong>Falcon Logistic India</strong></td><td><span class="badge badge-purple">Warehouse</span></td><td>Security</td><td>Jigni</td></tr>
+              <tr><td>11</td><td><strong>Greenwoods</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Full Maintenance</td><td>Doddanagamangala</td></tr>
+              <tr><td>12</td><td><strong>Y Residency</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>Harllur</td></tr>
+              <tr><td>13</td><td><strong>Y Residency</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>Electronic City</td></tr>
+              <tr><td>14</td><td><strong>Y Residency</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>Kengeri</td></tr>
+              <tr><td>15</td><td><strong>Y Residency</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>White Field</td></tr>
+              <tr><td>16</td><td><strong>Y Residency</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>Benson Town</td></tr>
+              <tr><td>17</td><td><strong>NCCCL</strong></td><td><span class="badge badge-red">Construction</span></td><td>Security</td><td>C.V. Raman Nagar</td></tr>
+              <tr><td>18</td><td><strong>Y Residency</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>C.V. Raman Nagar</td></tr>
+              <tr><td>19</td><td><strong>Adarsh park height</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>Gunjur Road</td></tr>
+              <tr><td>20</td><td><strong>NCCCL-TGS</strong></td><td><span class="badge badge-red">Construction</span></td><td>Security</td><td>Hoodi</td></tr>
+              <tr><td>21</td><td><strong>Good Earth Motif</strong></td><td><span class="badge badge-green">Villas</span></td><td>Security</td><td>Mysore Road</td></tr>
+              <tr><td>22</td><td><strong>Good Earth Ochre</strong></td><td><span class="badge badge-green">Villas</span></td><td>Security</td><td>Mysore Road</td></tr>
+              <tr><td>23</td><td><strong>Mahindra Blossom</strong></td><td><span class="badge badge-red">Construction</span></td><td>Security</td><td>Hope Farm</td></tr>
+              <tr><td>24</td><td><strong>Kailash BDA Apartment</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>Kengeri</td></tr>
+              <tr><td>25</td><td><strong>Trinity School</strong></td><td><span class="badge badge-purple">School</span></td><td>Security</td><td>Doddanagamangala</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-wrapper" data-aos="flip-up">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Get In Touch</h3>
+            <p style="color: var(--muted-text); margin-bottom: 1.5rem; font-size: 0.92rem;">Contact us today to receive a personalized quote for your facility or security needs.</p>
+
+            <div class="contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <strong>Head Office Address</strong>
+                <p>AYUSH SECURITY &amp; FACILITY MANAGEMENT SERVICES<br>No 24 KH No 14/1 Naganathpura, Electronic City Post, Bengaluru - 560100</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <strong>Phone Support</strong>
+                <p>+91 8867485808 / +91 7829834287</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <strong>Email Address</strong>
+                <p>hr.ayushservices@gmail.com</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-info">
+            <h3>Operational Hours</h3>
+            <div class="contact-item">
+              <i class="fa-solid fa-clock"></i>
+              <div>
+                <strong>Housekeeping Timings</strong>
+                <p>8:30 AM – 5:00 PM (Mon – Sat)<br><em>(45 min lunch break included; closed Karnataka state holidays)</em></p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <i class="fa-solid fa-user-shield"></i>
+              <div>
+                <strong>Security Shifts</strong>
+                <p>24/7 Deployment & Supervisor Inspections</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Quick Action Buttons -->
+  <a href="https://wa.me/918867485808" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <a href="tel:+918867485808" class="call-float" aria-label="Call Support">
+    <i class="fa-solid fa-phone"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 AYUSH SECURITY &amp; FACILITY MANAGEMENT SERVICES. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.com/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('#navMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 24,
+      loop: true,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        640: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+  </script>
+</body>
+</html>
