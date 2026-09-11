@@ -13,18 +13,19 @@
   
   <style>
     :root {
-      --bg-dark: #0b1329;
-      --bg-card: #111e3f;
-      --bg-card-hover: #192a56;
+      /* Refreshed Luxury Dark Theme Palette */
+      --bg-dark: #0b1120;
+      --bg-card: #151f32;
+      --bg-card-hover: #1c2a45;
       --primary-text: #ffffff;
-      --muted-text: #d1d5db;
-      --accent-yellow: #ffb703;
-      --accent-orange: #fb8500;
-      --accent-red: #a80000;
-      --accent-darkred: #780000;
-      --border-color: rgba(255, 255, 255, 0.12);
-      --border-hover: rgba(255, 183, 3, 0.5);
-      --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      --muted-text: #94a3b8;
+      --accent-gold: #f59e0b;
+      --accent-emerald: #10b981;
+      --accent-cyan: #06b6d4;
+      --accent-red: #ef4444;
+      --border-color: rgba(255, 255, 255, 0.1);
+      --border-hover: rgba(16, 185, 129, 0.5);
+      --shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7);
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
@@ -53,12 +54,12 @@
 
     /* Top Notice Header Bar */
     .top-header-bar {
-      background: linear-gradient(90deg, #f7b731 0%, #ffb703 100%);
-      color: #000000;
-      padding: 0.5rem 0;
-      font-size: 0.82rem;
+      background: linear-gradient(90deg, #059669 0%, #10b981 100%);
+      color: #ffffff;
+      padding: 0.55rem 0;
+      font-size: 0.85rem;
       font-weight: 700;
-      border-bottom: 1px solid rgba(0,0,0,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     .top-header-container {
@@ -80,13 +81,14 @@
     }
 
     .top-header-right a {
-      color: #000000;
+      color: #ffffff;
       text-decoration: none;
       transition: var(--transition);
+      font-weight: 700;
     }
 
     .top-header-right a:hover {
-      opacity: 0.7;
+      opacity: 0.8;
     }
 
     .social-links {
@@ -95,15 +97,21 @@
     }
 
     .social-links a {
-      width: 24px;
-      height: 24px;
-      background: #000000;
-      color: #ffb703;
+      width: 26px;
+      height: 26px;
+      background: rgba(0, 0, 0, 0.2);
+      color: #ffffff;
       border-radius: 50%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-size: 0.75rem;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background: #ffffff;
+      color: #059669;
     }
 
     /* Main Navigation Header */
@@ -112,8 +120,8 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-      padding: 0.5rem 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      padding: 0.6rem 0;
     }
 
     .nav-container {
@@ -142,37 +150,37 @@
     }
 
     nav a {
-      color: #1a1a1a;
+      color: #0b1120;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.92rem;
       transition: var(--transition);
       text-transform: uppercase;
     }
 
     nav a:hover {
-      color: var(--accent-orange);
+      color: var(--accent-emerald);
     }
 
     .nav-btn {
-      background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-red) 100%);
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
       color: #ffffff !important;
-      padding: 0.65rem 1.5rem;
+      padding: 0.65rem 1.6rem;
       border-radius: 50px;
-      font-weight: 700 !important;
-      box-shadow: 0 4px 15px rgba(251, 133, 0, 0.4);
+      font-weight: 800 !important;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
     }
 
     .mobile-toggle {
       display: none;
       background: transparent;
       border: none;
-      color: #1a1a1a;
+      color: #0b1120;
       font-size: 1.5rem;
       cursor: pointer;
     }
 
-    /* Dynamic Curved Hero Canvas */
+    /* Hero Section */
     .hero-enterprise {
       position: relative;
       min-height: 85vh;
@@ -180,7 +188,7 @@
       display: flex;
       align-items: center;
       overflow: hidden;
-      background-color: #ffb703;
+      background: linear-gradient(135deg, #0b1120 0%, #152338 100%);
     }
 
     .hero-custom-bg {
@@ -216,14 +224,14 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(120, 0, 0, 0.15);
-      color: var(--accent-darkred);
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--accent-emerald);
       padding: 6px 18px;
       border-radius: 50px;
       font-size: 0.85rem;
       font-weight: 800;
       margin-bottom: 1rem;
-      border: 1px solid rgba(120, 0, 0, 0.2);
+      border: 1px solid rgba(16, 185, 129, 0.4);
       text-transform: uppercase;
       letter-spacing: 1px;
     }
@@ -233,25 +241,23 @@
       font-size: clamp(2rem, 4vw, 3.5rem);
       font-weight: 900;
       line-height: 1.15;
-      color: var(--accent-red);
+      color: #ffffff;
       margin-bottom: 1rem;
       text-transform: uppercase;
       letter-spacing: -0.5px;
-      text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
     }
 
     .hero-main-content h2 {
       font-family: 'Poppins', sans-serif;
       font-size: clamp(1.5rem, 3vw, 2.5rem);
       font-weight: 800;
-      color: #ffffff;
+      color: var(--accent-emerald);
       margin-bottom: 1.5rem;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     .hero-main-content p {
       font-size: clamp(0.95rem, 1.4vw, 1.15rem);
-      color: #1a1a1a;
+      color: var(--muted-text);
       font-weight: 600;
       margin-bottom: 2rem;
       max-width: 620px;
@@ -278,29 +284,29 @@
     }
 
     .btn-primary {
-      background: var(--accent-red);
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
       color: #ffffff;
-      box-shadow: 0 8px 25px rgba(168, 0, 0, 0.4);
+      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
     }
 
     .btn-primary:hover {
-      background: var(--accent-darkred);
+      background: #059669;
       transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(120, 0, 0, 0.6);
+      box-shadow: 0 12px 30px rgba(5, 150, 105, 0.6);
     }
 
     .btn-outline {
-      background-color: #0b1329;
+      background-color: transparent;
       color: #ffffff;
-      border: 2px solid #0b1329;
+      border: 2px solid var(--accent-emerald);
     }
 
     .btn-outline:hover {
-      background-color: #111e3f;
-      border-color: #111e3f;
+      background-color: var(--accent-emerald);
+      color: #0b1120;
     }
 
-    /* Media Frame & Right Guard Container */
+    /* Media Frame */
     .hero-media-wrapper {
       position: relative;
       display: flex;
@@ -317,7 +323,7 @@
       height: clamp(140px, 20vw, 240px);
       border-radius: 50%;
       border: 6px solid #ffffff;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
       overflow: hidden;
       z-index: 12;
     }
@@ -335,12 +341,12 @@
       width: 100%;
       max-width: 450px;
       object-fit: contain;
-      filter: drop-shadow(0 15px 20px rgba(0,0,0,0.4));
+      filter: drop-shadow(0 15px 20px rgba(0,0,0,0.5));
     }
 
     /* Stats Grid Banner */
     .stats-banner {
-      background: rgba(11, 19, 41, 0.95);
+      background: rgba(21, 31, 50, 0.95);
       backdrop-filter: blur(16px);
       margin-top: 2rem;
       border-radius: 16px;
@@ -364,7 +370,7 @@
     .stat-number {
       font-size: clamp(1.8rem, 3.5vw, 2.5rem);
       font-weight: 800;
-      color: var(--accent-yellow);
+      color: var(--accent-emerald);
       display: block;
       line-height: 1;
       margin-bottom: 0.4rem;
@@ -390,10 +396,10 @@
     }
 
     .section-subtitle {
-      color: var(--accent-yellow);
-      font-weight: 700;
+      color: var(--accent-emerald);
+      font-weight: 800;
       text-transform: uppercase;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       letter-spacing: 1.5px;
       margin-bottom: 0.5rem;
       display: block;
@@ -406,7 +412,7 @@
       letter-spacing: -0.5px;
     }
 
-    /* About Section */
+    /* About Cards */
     .about-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -423,6 +429,7 @@
 
     .about-card:hover {
       transform: translateY(-6px);
+      background: var(--bg-card-hover);
       border-color: var(--border-hover);
       box-shadow: var(--shadow);
     }
@@ -430,15 +437,15 @@
     .about-icon {
       width: 50px;
       height: 50px;
-      background: rgba(255, 183, 3, 0.15);
-      color: var(--accent-yellow);
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--accent-emerald);
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.3rem;
       margin-bottom: 1.25rem;
-      border: 1px solid rgba(255, 183, 3, 0.3);
+      border: 1px solid rgba(16, 185, 129, 0.3);
     }
 
     .about-card h3 {
@@ -462,7 +469,7 @@
     }
 
     .about-card ul li i {
-      color: var(--accent-yellow);
+      color: var(--accent-emerald);
       margin-top: 4px;
     }
 
@@ -485,8 +492,9 @@
 
     .service-card:hover {
       transform: translateY(-6px);
+      background: var(--bg-card-hover);
       border-color: var(--border-hover);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+      box-shadow: var(--shadow);
     }
 
     .service-img-wrapper {
@@ -522,8 +530,8 @@
     .service-icon {
       width: 42px;
       height: 42px;
-      background: rgba(255, 183, 3, 0.15);
-      color: var(--accent-yellow);
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--accent-emerald);
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -552,13 +560,13 @@
     }
 
     .service-card ul li i {
-      color: var(--accent-yellow);
+      color: var(--accent-emerald);
       margin-top: 3px;
     }
 
     /* Carousel Section */
     .carousel-section {
-      background: #070d1e;
+      background: #060b17;
       border-top: 1px solid var(--border-color);
       border-bottom: 1px solid var(--border-color);
       padding: clamp(3rem, 6vw, 5rem) 0;
@@ -607,7 +615,7 @@
     }
 
     .swiper-pagination-bullet-active {
-      background: var(--accent-yellow) !important;
+      background: var(--accent-emerald) !important;
       opacity: 1;
       width: 24px;
       border-radius: 4px;
@@ -636,7 +644,7 @@
     }
 
     th {
-      background-color: rgba(255, 255, 255, 0.05);
+      background-color: rgba(255, 255, 255, 0.06);
       color: #ffffff;
       font-weight: 700;
       padding: 1.1rem 1.4rem;
@@ -654,7 +662,7 @@
     }
 
     tr:hover {
-      background-color: rgba(255, 255, 255, 0.02);
+      background-color: rgba(255, 255, 255, 0.03);
     }
 
     td strong {
@@ -670,19 +678,18 @@
       text-transform: uppercase;
     }
 
-    .badge-blue { background: rgba(255, 183, 3, 0.2); color: #ffb703; border: 1px solid rgba(255, 183, 3, 0.4); }
-    .badge-green { background: rgba(251, 133, 0, 0.2); color: #fb8500; border: 1px solid rgba(251, 133, 0, 0.4); }
-    .badge-purple { background: rgba(168, 85, 247, 0.2); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.4); }
-    .badge-red { background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.4); }
-    .badge-teal { background: rgba(20, 184, 166, 0.2); color: #14b8a6; border: 1px solid rgba(20, 184, 166, 0.4); }
+    .badge-blue { background: rgba(6, 182, 212, 0.2); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.4); }
+    .badge-green { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+    .badge-purple { background: rgba(168, 85, 247, 0.2); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.4); }
+    .badge-red { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
 
     /* Contact Block */
     .contact-wrapper {
-      background: linear-gradient(135deg, #192a56 0%, #0b1329 100%);
+      background: linear-gradient(135deg, #151f32 0%, #0b1120 100%);
       border-radius: 20px;
       padding: clamp(1.5rem, 4vw, 3.5rem);
       color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      border: 1px solid var(--border-color);
     }
 
     .contact-grid {
@@ -706,12 +713,12 @@
 
     .contact-item i {
       font-size: 1.15rem;
-      color: var(--accent-yellow);
-      background: rgba(255, 183, 3, 0.15);
+      color: var(--accent-emerald);
+      background: rgba(16, 185, 129, 0.15);
       padding: 12px;
       border-radius: 12px;
       flex-shrink: 0;
-      border: 1px solid rgba(255, 183, 3, 0.3);
+      border: 1px solid rgba(16, 185, 129, 0.3);
     }
 
     .contact-item p {
@@ -727,7 +734,7 @@
 
     /* Footer */
     footer {
-      background-color: #040814;
+      background-color: #060b17;
       color: var(--muted-text);
       text-align: center;
       padding: 2rem;
@@ -764,7 +771,7 @@
       position: fixed;
       bottom: 85px;
       right: 25px;
-      background-color: #2563eb;
+      background-color: #10b981;
       color: #fff;
       border-radius: 50px;
       text-align: center;
@@ -891,18 +898,18 @@
         <svg class="brand-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 120">
           <defs>
             <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#990000" />
-              <stop offset="100%" stop-color="#660000" />
+              <stop offset="0%" stop-color="#10b981" />
+              <stop offset="100%" stop-color="#059669" />
             </linearGradient>
           </defs>
           <g transform="translate(10, 5)">
             <path d="M50 5 L90 20 V50 C90 75 50 95 50 95 C50 95 10 75 10 50 V20 Z" fill="url(#shieldGrad)" />
-            <path d="M32 48 L44 60 L68 34" fill="none" stroke="#ffb703" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M32 48 L44 60 L68 34" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
           </g>
-          <text x="115" y="52" font-family="'Poppins', sans-serif" font-weight="900" font-size="34" fill="#990000" letter-spacing="-0.5">AYUSH</text>
-          <text x="245" y="52" font-family="'Poppins', sans-serif" font-weight="700" font-size="28" fill="#ffb703">SERVICES</text>
-          <text x="115" y="80" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="12" fill="#1a1a1a" letter-spacing="1.2">SECURITY &amp; FACILITY SERVICES</text>
-          <line x1="115" y1="92" x2="680" y2="92" stroke="#ffb703" stroke-width="4" stroke-linecap="round" />
+          <text x="115" y="52" font-family="'Poppins', sans-serif" font-weight="900" font-size="34" fill="#0b1120" letter-spacing="-0.5">AYUSH</text>
+          <text x="245" y="52" font-family="'Poppins', sans-serif" font-weight="700" font-size="28" fill="#10b981">SERVICES</text>
+          <text x="115" y="80" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="12" fill="#64748b" letter-spacing="1.2">SECURITY &amp; FACILITY SERVICES</text>
+          <line x1="115" y1="92" x2="680" y2="92" stroke="#10b981" stroke-width="4" stroke-linecap="round" />
         </svg>
       </a>
       
@@ -924,9 +931,9 @@
   <div class="hero-enterprise">
     <svg class="hero-custom-bg" viewBox="0 0 1440 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <polygon points="0,0 300,0 260,70 0,70" fill="#ffffff" />
-      <path d="M -50 650 A 250 250 0 0 1 380 400 L -50 400 Z" fill="#780000" />
-      <path d="M 850 60 C 830 180 920 220 920 300 C 920 380 830 420 850 540 L 980 600 L 980 0 Z" fill="#a80000" />
-      <path d="M 910 0 C 900 150 990 220 990 300 C 990 380 900 450 910 600 L 1440 600 L 1440 0 Z" fill="#191216" />
+      <path d="M -50 650 A 250 250 0 0 1 380 400 L -50 400 Z" fill="#152338" />
+      <path d="M 850 60 C 830 180 920 220 920 300 C 920 380 830 420 850 540 L 980 600 L 980 0 Z" fill="#059669" />
+      <path d="M 910 0 C 900 150 990 220 990 300 C 990 380 900 450 910 600 L 1440 600 L 1440 0 Z" fill="#0b1120" />
     </svg>
 
     <div class="container hero-container">
@@ -996,7 +1003,7 @@
           <ul>
             <li><i class="fa-solid fa-circle-check"></i> Deliver high-quality security solutions.</li>
             <li><i class="fa-solid fa-circle-check"></i> Ensure safety of people and assets.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Provide specialized deep cleaning & facility services.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Provide specialized deep cleaning &amp; facility services.</li>
             <li><i class="fa-solid fa-circle-check"></i> Foster long-term client trust.</li>
           </ul>
         </div>
@@ -1005,10 +1012,10 @@
           <div class="about-icon"><i class="fa-solid fa-list-check"></i></div>
           <h3>Scope of Work</h3>
           <ul>
-            <li><i class="fa-solid fa-circle-check"></i> Move-in / Move-out & Deep Sanitization</li>
-            <li><i class="fa-solid fa-circle-check"></i> Apartment & Property Care</li>
-            <li><i class="fa-solid fa-circle-check"></i> Space & Physical Assets Care</li>
-            <li><i class="fa-solid fa-circle-check"></i> Hospitality & Commercial Sectors</li>
+            <li><i class="fa-solid fa-circle-check"></i> Move-in / Move-out &amp; Deep Sanitization</li>
+            <li><i class="fa-solid fa-circle-check"></i> Apartment &amp; Property Care</li>
+            <li><i class="fa-solid fa-circle-check"></i> Space &amp; Physical Assets Care</li>
+            <li><i class="fa-solid fa-circle-check"></i> Hospitality &amp; Commercial Sectors</li>
           </ul>
         </div>
       </div>
@@ -1016,7 +1023,7 @@
   </section>
 
   <!-- Services Section -->
-  <section id="services" style="background-color: #070d1e;">
+  <section id="services" style="background-color: #060b17;">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
         <span class="section-subtitle">What We Offer</span>
@@ -1024,7 +1031,6 @@
       </div>
 
       <div class="services-grid">
-        <!-- New Deep Cleaning Service Card -->
         <div class="service-card" data-aos="fade-up" data-aos-delay="100">
           <div class="service-img-wrapper">
             <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80" alt="Deep Cleaning Services">
@@ -1035,9 +1041,9 @@
               <h3 class="service-title">Deep Cleaning Services</h3>
             </div>
             <ul>
-              <li><i class="fa-solid fa-check"></i> High-pressure floor & tile scrubbing</li>
-              <li><i class="fa-solid fa-check"></i> Kitchen & grease trap degreasing</li>
-              <li><i class="fa-solid fa-check"></i> Upholstery, sofa & carpet shampooing</li>
+              <li><i class="fa-solid fa-check"></i> High-pressure floor &amp; tile scrubbing</li>
+              <li><i class="fa-solid fa-check"></i> Kitchen &amp; grease trap degreasing</li>
+              <li><i class="fa-solid fa-check"></i> Upholstery, sofa &amp; carpet shampooing</li>
               <li><i class="fa-solid fa-check"></i> Move-in / post-construction deep clean</li>
             </ul>
           </div>
@@ -1053,9 +1059,9 @@
               <h3 class="service-title">Housekeeping Services</h3>
             </div>
             <ul>
-              <li><i class="fa-solid fa-check"></i> Sweeping, mopping & dusting</li>
+              <li><i class="fa-solid fa-check"></i> Sweeping, mopping &amp; dusting</li>
               <li><i class="fa-solid fa-check"></i> Restroom daily maintenance</li>
-              <li><i class="fa-solid fa-check"></i> Waste management & disposal</li>
+              <li><i class="fa-solid fa-check"></i> Waste management &amp; disposal</li>
               <li><i class="fa-solid fa-check"></i> Eco-friendly non-toxic products</li>
             </ul>
           </div>
@@ -1091,7 +1097,7 @@
             <ul>
               <li><i class="fa-solid fa-check"></i> Preventive electrical checks</li>
               <li><i class="fa-solid fa-check"></i> Circuit breaker upgrades</li>
-              <li><i class="fa-solid fa-check"></i> Rewiring & light fittings</li>
+              <li><i class="fa-solid fa-check"></i> Rewiring &amp; light fittings</li>
               <li><i class="fa-solid fa-check"></i> Daily common meter readings</li>
             </ul>
           </div>
@@ -1107,7 +1113,7 @@
               <h3 class="service-title">Plumbing Services</h3>
             </div>
             <ul>
-              <li><i class="fa-solid fa-check"></i> Daily tank & sump leak checks</li>
+              <li><i class="fa-solid fa-check"></i> Daily tank &amp; sump leak checks</li>
               <li><i class="fa-solid fa-check"></i> Overhead tank cleaning (3 mos)</li>
               <li><i class="fa-solid fa-check"></i> Sump cleaning (6 mos)</li>
               <li><i class="fa-solid fa-check"></i> Rainwater drain services</li>
@@ -1122,11 +1128,11 @@
           <div class="service-body">
             <div class="service-header">
               <div class="service-icon"><i class="fa-solid fa-seedling"></i></div>
-              <h3 class="service-title">Gardening & Landscaping</h3>
+              <h3 class="service-title">Gardening &amp; Landscaping</h3>
             </div>
             <ul>
-              <li><i class="fa-solid fa-check"></i> Lawn trimming & pruning</li>
-              <li><i class="fa-solid fa-check"></i> Balcony & terrace garden care</li>
+              <li><i class="fa-solid fa-check"></i> Lawn trimming &amp; pruning</li>
+              <li><i class="fa-solid fa-check"></i> Balcony &amp; terrace garden care</li>
               <li><i class="fa-solid fa-check"></i> Organic fertilizer application</li>
               <li><i class="fa-solid fa-check"></i> Irrigation system checks</li>
             </ul>
@@ -1140,13 +1146,13 @@
           <div class="service-body">
             <div class="service-header">
               <div class="service-icon"><i class="fa-solid fa-bug"></i></div>
-              <h3 class="service-title">Pool & Pest Control</h3>
+              <h3 class="service-title">Pool &amp; Pest Control</h3>
             </div>
             <ul>
-              <li><i class="fa-solid fa-check"></i> Pool filtration & TCCS-90 dosing</li>
-              <li><i class="fa-solid fa-check"></i> Weekly pH & chlorine testing</li>
+              <li><i class="fa-solid fa-check"></i> Pool filtration &amp; TCCS-90 dosing</li>
+              <li><i class="fa-solid fa-check"></i> Weekly pH &amp; chlorine testing</li>
               <li><i class="fa-solid fa-check"></i> Integrated pest care (Green Pest)</li>
-              <li><i class="fa-solid fa-check"></i> Termite & mosquito sprays</li>
+              <li><i class="fa-solid fa-check"></i> Termite &amp; mosquito sprays</li>
             </ul>
           </div>
         </div>
@@ -1174,21 +1180,21 @@
           <div class="swiper-slide">
             <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80" alt="Deep Cleaning Operation">
             <div class="slide-content">
-              <h4>Deep Cleaning & Sanitization</h4>
+              <h4>Deep Cleaning &amp; Sanitization</h4>
               <p>High-pressure floor scrubbing, carpet extraction, and deep sanitization.</p>
             </div>
           </div>
           <div class="swiper-slide">
             <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?auto=format&fit=crop&w=800&q=80" alt="Facility Operations">
             <div class="slide-content">
-              <h4>Facility & Commercial Sanitation</h4>
+              <h4>Facility &amp; Commercial Sanitation</h4>
               <p>Industrial-grade cleaning protocols using eco-friendly non-toxic agents.</p>
             </div>
           </div>
           <div class="swiper-slide">
             <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Electrical Operations">
             <div class="slide-content">
-              <h4>Technical Maintenance & Engineering</h4>
+              <h4>Technical Maintenance &amp; Engineering</h4>
               <p>Routine electrical panel inspections and preventative asset upkeep.</p>
             </div>
           </div>
@@ -1226,31 +1232,31 @@
               </tr>
             </thead>
             <tbody>
-              <tr><td>01</td><td><strong>SJR Fiesta Homes</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Full Maintenance & Deep Clean</td><td>Electronic city</td></tr>
+              <tr><td>01</td><td><strong>SJR Fiesta Homes</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Full Maintenance &amp; Deep Clean</td><td>Electronic city</td></tr>
               <tr><td>02</td><td><strong>SSB Urban Lotus</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>Rayasandra</td></tr>
               <tr><td>03</td><td><strong>Shrihari Residency</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>Bellandur</td></tr>
-              <tr><td>04</td><td><strong>Orchard in Bloom Inner spaces</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Full Maintenance & Deep Clean</td><td>Harllur Road</td></tr>
+              <tr><td>04</td><td><strong>Orchard in Bloom Inner spaces</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Full Maintenance &amp; Deep Clean</td><td>Harllur Road</td></tr>
               <tr><td>05</td><td><strong>Sunshine</strong></td><td><span class="badge badge-green">Villas</span></td><td>Full Maintenance</td><td>Carmelaram gate</td></tr>
               <tr><td>06</td><td><strong>Adarsh Nivas</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>JP Nagar</td></tr>
               <tr><td>07</td><td><strong>Adarsh Tropica</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>Doddakannahalli</td></tr>
               <tr><td>08</td><td><strong>Pooja Navaratna</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>Doddakannahalli</td></tr>
               <tr><td>09</td><td><strong>Arrat</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>Electronic city</td></tr>
-              <tr><td>10</td><td><strong>Falcon Logistic India</strong></td><td><span class="badge badge-purple">Warehouse</span></td><td>Security & Deep Clean</td><td>Jigni</td></tr>
+              <tr><td>10</td><td><strong>Falcon Logistic India</strong></td><td><span class="badge badge-purple">Warehouse</span></td><td>Security &amp; Deep Clean</td><td>Jigni</td></tr>
               <tr><td>11</td><td><strong>Greenwoods</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Full Maintenance</td><td>Doddanagamangala</td></tr>
               <tr><td>12</td><td><strong>Y Residency</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>Harllur</td></tr>
               <tr><td>13</td><td><strong>Y Residency</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>Electronic City</td></tr>
               <tr><td>14</td><td><strong>Y Residency</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>Kengeri</td></tr>
               <tr><td>15</td><td><strong>Y Residency</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>White Field</td></tr>
               <tr><td>16</td><td><strong>Y Residency</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>Benson Town</td></tr>
-              <tr><td>17</td><td><strong>NCCCL</strong></td><td><span class="badge badge-red">Construction</span></td><td>Security & Post-Const. Deep Clean</td><td>C.V. Raman Nagar</td></tr>
+              <tr><td>17</td><td><strong>NCCCL</strong></td><td><span class="badge badge-red">Construction</span></td><td>Security &amp; Post-Const. Deep Clean</td><td>C.V. Raman Nagar</td></tr>
               <tr><td>18</td><td><strong>Y Residency</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>C.V. Raman Nagar</td></tr>
               <tr><td>19</td><td><strong>Adarsh park height</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security</td><td>Gunjur Road</td></tr>
               <tr><td>20</td><td><strong>NCCCL-TGS</strong></td><td><span class="badge badge-red">Construction</span></td><td>Security</td><td>Hoodi</td></tr>
               <tr><td>21</td><td><strong>Good Earth Motif</strong></td><td><span class="badge badge-green">Villas</span></td><td>Security</td><td>Mysore Road</td></tr>
               <tr><td>22</td><td><strong>Good Earth Ochre</strong></td><td><span class="badge badge-green">Villas</span></td><td>Security</td><td>Mysore Road</td></tr>
               <tr><td>23</td><td><strong>Mahindra Blossom</strong></td><td><span class="badge badge-red">Construction</span></td><td>Security</td><td>Hope Farm</td></tr>
-              <tr><td>24</td><td><strong>Kailash BDA Apartment</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security & Deep Clean</td><td>Kengeri</td></tr>
-              <tr><td>25</td><td><strong>Trinity School</strong></td><td><span class="badge badge-purple">School</span></td><td>Security & Deep Clean</td><td>Doddanagamangala</td></tr>
+              <tr><td>24</td><td><strong>Kailash BDA Apartment</strong></td><td><span class="badge badge-blue">Apartment</span></td><td>Security &amp; Deep Clean</td><td>Kengeri</td></tr>
+              <tr><td>25</td><td><strong>Trinity School</strong></td><td><span class="badge badge-purple">School</span></td><td>Security &amp; Deep Clean</td><td>Doddanagamangala</td></tr>
             </tbody>
           </table>
         </div>
@@ -1306,7 +1312,7 @@
               <i class="fa-solid fa-user-shield"></i>
               <div>
                 <strong>Security Shifts</strong>
-                <p>24/7 Deployment & Supervisor Inspections</p>
+                <p>24/7 Deployment &amp; Supervisor Inspections</p>
               </div>
             </div>
           </div>
