@@ -13,7 +13,6 @@
   
   <style>
     :root {
-      /* Refreshed Luxury Dark Theme Palette */
       --bg-dark: #0b1120;
       --bg-card: #151f32;
       --bg-card-hover: #1c2a45;
@@ -145,10 +144,12 @@
     .brand-img-logo {
       height: 52px;
       width: 52px;
-      object-fit: contain;
+      object-fit: cover;
       border-radius: 50%;
       background: #ffffff;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border: 2px solid var(--accent-emerald);
+      flex-shrink: 0;
     }
 
     .brand-text-wrapper {
@@ -335,7 +336,6 @@
       color: #0b1120;
     }
 
-    /* Media Frame */
     .hero-media-wrapper {
       position: relative;
       display: flex;
@@ -373,7 +373,6 @@
       filter: drop-shadow(0 15px 20px rgba(0,0,0,0.5));
     }
 
-    /* Stats Grid Banner */
     .stats-banner {
       background: rgba(21, 31, 50, 0.95);
       backdrop-filter: blur(16px);
@@ -413,7 +412,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* Sections */
     section {
       padding: clamp(3rem, 6vw, 5rem) 0;
     }
@@ -593,7 +591,7 @@
       margin-top: 3px;
     }
 
-    /* Carousel Section */
+    /* Gallery Section Fixed Layout */
     .carousel-section {
       background: #060b17;
       border-top: 1px solid var(--border-color);
@@ -601,20 +599,26 @@
       padding: clamp(3rem, 6vw, 5rem) 0;
     }
 
-    .mySwiper {
+    .swiper {
       width: 100%;
+      min-height: 380px;
       padding-bottom: 3.5rem !important;
     }
 
-    .mySwiper .swiper-slide {
+    .swiper-wrapper {
+      display: flex;
+    }
+
+    .swiper-slide {
       background: var(--bg-card);
       border-radius: 16px;
       overflow: hidden;
       border: 1px solid var(--border-color);
       transition: var(--transition);
+      height: auto;
     }
 
-    .mySwiper .swiper-slide img {
+    .swiper-slide img {
       width: 100%;
       height: 240px;
       object-fit: cover;
@@ -759,6 +763,27 @@
       color: #ffffff;
       display: block;
       margin-bottom: 2px;
+    }
+
+    .map-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--accent-emerald);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .map-link-btn:hover {
+      background: var(--accent-emerald);
+      color: #0b1120;
     }
 
     /* Footer */
@@ -924,7 +949,14 @@
   <header>
     <div class="container nav-container">
       <a href="#" class="brand-logo-link">
-        <img src="logo.jpg" alt="ASFS Logo" class="brand-img-logo">
+        <svg viewBox="0 0 500 500" class="brand-img-logo">
+          <circle cx="250" cy="250" r="230" fill="#0c1836" stroke="#1d3461" stroke-width="20"/>
+          <circle cx="250" cy="250" r="190" fill="#ffffff"/>
+          <path d="M250 110 L370 170 V290 L250 400 L130 290 V170 Z" fill="none" stroke="#2b7bbf" stroke-width="20" stroke-linejoin="round"/>
+          <path d="M250 145 L340 190 V280 L250 365 L160 280 V190 Z" fill="none" stroke="#5cb3e4" stroke-width="16" stroke-linejoin="round"/>
+          <path d="M250 180 L310 210 V270 L250 330 L190 270 V210 Z" fill="none" stroke="#10b981" stroke-width="12" stroke-linejoin="round"/>
+          <text x="250" y="270" font-family="'Poppins', sans-serif" font-weight="900" font-size="64" fill="#c81e2b" text-anchor="middle">ASFS</text>
+        </svg>
         <div class="brand-text-wrapper">
           <span class="brand-title-main">AYUSH <span style="color: var(--accent-emerald);">SERVICES</span></span>
           <span class="brand-title-sub">SECURITY &amp; FACILITY SERVICES</span>
@@ -1181,12 +1213,12 @@
   <!-- Operations Carousel Section -->
   <div class="carousel-section" id="gallery">
     <div class="container">
-      <div class="section-header" data-aos="fade-up">
+      <div class="section-header">
         <span class="section-subtitle">Operational Excellence</span>
         <h2 class="section-title">Our Trained Personnel in Action</h2>
       </div>
 
-      <div class="swiper mySwiper" data-aos="zoom-in">
+      <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80" alt="Security Guard Briefing">
@@ -1296,6 +1328,9 @@
               <div>
                 <strong>Head Office Address</strong>
                 <p>AYUSH SECURITY &amp; FACILITY SERVICES<br>No 24 KH No 14/1 Naganathpura, Electronic City Post, Bengaluru - 560100</p>
+                <a href="https://maps.app.goo.gl/SCKH17MdVnAXtckXA" target="_blank" class="map-link-btn">
+                  <i class="fa-solid fa-map-location-dot"></i> View Location on Google Maps
+                </a>
               </div>
             </div>
 
@@ -1354,43 +1389,47 @@
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.com/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   
   <script>
-    AOS.init({
-      duration: 800,
-      once: true
-    });
-
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const navMenu = document.getElementById('navMenu');
-
-    mobileMenuBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
-
-    document.querySelectorAll('#navMenu a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
+    document.addEventListener("DOMContentLoaded", function() {
+      AOS.init({
+        duration: 800,
+        once: true
       });
-    });
 
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 1,
-      spaceBetween: 24,
-      loop: true,
-      autoplay: {
-        delay: 3500,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      breakpoints: {
-        640: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 }
-      }
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const navMenu = document.getElementById('navMenu');
+
+      mobileMenuBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+
+      document.querySelectorAll('#navMenu a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+        });
+      });
+
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        loop: true,
+        observer: true,
+        observeParents: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 }
+        }
+      });
     });
   </script>
 </body>
